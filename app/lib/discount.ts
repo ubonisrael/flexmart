@@ -1,0 +1,1 @@
+export const originalPrice = (price:number, discount:number) => price * (1 + (discount/100))
