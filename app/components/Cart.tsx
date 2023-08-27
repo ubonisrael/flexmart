@@ -69,7 +69,7 @@ const Cart = () => {
           <span>total</span>{" "}
           <span>${cart.reduce((sum, c) => sum + c.price * c.num, 0)}</span>
         </p>
-        <button className="w-[calc(100%-16px)] self-baseline h-12 m-2 text-slate-50 bg-orange-400 border-0 rounded-lg hover:bg-orange-500/50">
+        <button className="w-[calc(100%-16px)] self-baseline h-12 m-2 text-slate-50 bg-orange-400 border-0 rounded-lg hover:bg-orange-600">
           Continue to checkout
         </button>
       </div>

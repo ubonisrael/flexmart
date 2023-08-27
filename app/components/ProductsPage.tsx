@@ -125,7 +125,7 @@ const ProductsPage = ({
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase">
                   Our Products
                 </h1>
-                <p className="text-base sm:text-xl md:text-2xl uppercase">Shop from our wide variety of products.</p>
+                <p className="text-base sm:text-xl uppercase">Shop from our wide variety of products.</p>
               </div>
             )}
             <div className="w-full flex flex-col gap-2">
