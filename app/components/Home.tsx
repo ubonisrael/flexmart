@@ -21,6 +21,7 @@ import { useEffect } from "react";
 import { categories } from "../lib/categories";
 
 const HomePage = ({ products }: Products) => {
+
   useEffect(() => {
     let counter = 0;
     const sliders = Array.from(
@@ -50,6 +51,7 @@ const HomePage = ({ products }: Products) => {
       carousel();
     }, 5000);
   }, []);
+
   return (
     <main className="w-full min-h-screen grid gap-6 md:gap-12 p-4 sm:p-8 lg:px-[calc(50%-576px)] lg:py-16 bg-slate-300">
       <div className="w-full h-96 md:h-[448px] flex flex-col items-center justify-between sm:justify-around p-6 sm:p-12 rounded-lg bg-slate-100">

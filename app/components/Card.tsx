@@ -11,7 +11,7 @@ import { useImageOnLoad } from "usehooks-ts";
 const Card = ({ product }: { product: Product }) => {
   const { cart, handleAddToCart } = useContext(CartContext) as CART;
   const { handleImageOnLoad, css } = useImageOnLoad();
-
+  
   const style: { [key: string]: CSSProperties } = {
     wrap: {
       position: "relative",
