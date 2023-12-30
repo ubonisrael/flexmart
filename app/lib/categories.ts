@@ -1,5 +1,4 @@
 export const categories = [
-  "all categories",
   "smartphones",
   "laptops",
   "fragrances",
@@ -8,6 +7,8 @@ export const categories = [
   "home-decoration",
   "furniture",
   "tops",
+  "sunglasses",
+  "all categories",
   "womens-dresses",
   "womens-shoes",
   "mens-shirts",
@@ -16,7 +17,6 @@ export const categories = [
   "womens-watches",
   "womens-bags",
   "womens-jewellery",
-  "sunglasses",
   "automotive",
   "motorcycle",
   "lighting",

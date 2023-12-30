@@ -39,9 +39,9 @@ const Header = () => {
             <MdMenu />
           </button>
           <Link href="/">
-            <p className="font-bold text-4xl uppercase cursor-pointer">
+            <span className="font-bold text-4xl uppercase cursor-pointer">
               FlexMart
-            </p>
+            </span>
           </Link>
         </div>
         <nav
@@ -103,7 +103,7 @@ const Header = () => {
           </div>
         </nav>
         <div className="flex items-center gap-1 md:gap-2">
-          <button className="flex items-center gap-2 text-2xl p-2 rounded-lg hover:text-slate-100 hover:bg-slate-500">
+          <div className="flex items-center gap-2 text-2xl p-2 rounded-lg hover:text-slate-100 hover:bg-slate-500 cursor-pointer">
             <Link
               href={`/login`}
             >
@@ -112,17 +112,17 @@ const Header = () => {
               </span>
             </Link>
             <FaUserLarge />
-          </button>
+          </div>
           <div className="relative text-2xl md:text-3xl p-2 rounded-lg hover:text-slate-100 hover:bg-slate-500 md:hover:bg-slate-500">
             <Link href={"/cart"}>
               <span className="sr-only" aria-expanded="false" role="cart">
                 Cart
               </span>
-              {cart.length ? (
+              {cart.length > 0 && (
                 <span className="absolute top-0 right-0 px-2 py-1 text-xs md:text-sm text-slate-50 bg-orange-400 rounded-full">
                   {cart.length}
                 </span>
-              ) : null}
+              )}
               <BsCart3 />
             </Link>
           </div>

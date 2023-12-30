@@ -3,7 +3,7 @@ import { categories } from "../lib/categories";
 
 const CategoriesList = () => (
   <>
-    {categories.map((item, i) => (
+    {categories.filter((item, i) => i < 10).map((item, i) => (
       <li
         key={i}
         className="w-auto px-1 hover:px-3 py-2 cursor-pointer hover:bg-slate-300 hover:font-bold md:hover:bg-white transition-all ease-in-out duration-300"

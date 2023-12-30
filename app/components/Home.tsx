@@ -5,20 +5,11 @@ import { Products } from "../@types/interface";
 import Card from "./Card";
 import CategoriesList from "./CategoriesList";
 import Image from "next/image";
-import laptopImg from "@/app/assets/category_images/dell-Gi3iUJ1FwxI-unsplash.jpg";
-import smartphoneImg from "@/app/assets/category_images/denis-cherkashin-zgUkIMKeJq4-unsplash.jpg";
-import groceriesImg from "@/app/assets/category_images/maddi-bazzocco-Hz4FAtKSLKo-unsplash.jpg";
-import womenswearImg from "@/app/assets/category_images/engin-akyurt-RSm7GBuMqos-unsplash.jpg";
-import furnituresImg from "@/app/assets/category_images/toa-heftiba-FV3GConVSss-unsplash.jpg";
-import menswatchesImg from "@/app/assets/category_images/joycoast-wood-watches-sunglasses-fFOar3AwgzQ-unsplash.jpg";
-import skincareImg from "@/app/assets/category_images/deanna-alys-6LBBOwkPzyQ-unsplash.jpg";
-import sunglassesImg from "@/app/assets/category_images/wu-yi-egqZNnzjXng-unsplash.jpg";
 import slider1 from "@/app/assets/slider_images/Desktop-Homepage-Slider_712x384-updated.jpg";
 import slider2 from "@/app/assets/slider_images/homepage_slider.jpg";
 import slider3 from "@/app/assets/slider_images/Mensfashion-slider.jpg";
 import slider4 from "@/app/assets/slider_images/Slider.png";
 import { useEffect } from "react";
-import { categories } from "../lib/categories";
 
 const HomePage = ({ products }: Products) => {
 
@@ -69,8 +60,8 @@ const HomePage = ({ products }: Products) => {
       </div>
       <section className="w-full grid gap-3 md:gap-6">
         <div className="w-full h-80 sm:h-[448px] flex gap-4">
-          <nav className="w-72 bg-slate-100 p-4 rounded-lg overflow-y-scroll hidden md:block">
-            <ul className="uppercase">
+          <nav className="w-72 bg-slate-100 p-4 rounded-lg hidden md:block">
+            <ul className="w-full h-full flex flex-col justify-between uppercase">
               <CategoriesList />
             </ul>
           </nav>
@@ -92,66 +83,6 @@ const HomePage = ({ products }: Products) => {
           </div>
         </div>
       </section>
-      <div className="w-full">
-        <h2 className="text-xl md:text-3xl font-bold uppercase tracking-wide">
-          Featured Categories
-        </h2>
-        <div className="w-full grid sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 py-4">
-          {categories
-            .filter((cat) => {
-              if (
-                cat == "smartphones" ||
-                cat == "laptops" ||
-                cat == "skincare" ||
-                cat == "sunglasses" ||
-                cat == "furniture" ||
-                cat == "groceries" ||
-                cat == "mens-watches" ||
-                cat == "womens-dresses"
-              ) {
-                return cat;
-              }
-            })
-            .map((cat) => {
-              if (cat.includes("-")) return cat.replace(/-/g, " ");
-              else return cat;
-            })
-            .map((cat, i) => (
-              <Link key={i} href={`/products?cat=${cat}`}>
-                <div className="relative w-full h-64 sm:h-72 cursor-pointer">
-                  <div className="absolute top-0 left-0 z-[5] w-full h-full flex items-center justify-center bg-slate-950/30 hover:bg-slate-950/70 rounded-lg">
-                    <p className="uppercase font-extrabold text-xl md:text-3xl text-white text-center">
-                      {cat}
-                    </p>
-                  </div>
-                  <Image
-                    className="rounded-lg"
-                    src={
-                      cat == "smartphones"
-                        ? smartphoneImg
-                        : cat == "laptops"
-                        ? laptopImg
-                        : cat == "skincare"
-                        ? skincareImg
-                        : cat == "sunglasses"
-                        ? sunglassesImg
-                        : cat == "furniture"
-                        ? furnituresImg
-                        : cat == "groceries"
-                        ? groceriesImg
-                        : cat == "mens-watches"
-                        ? menswatchesImg
-                        : womenswearImg
-                    }
-                    alt="laptop image"
-                    fill
-                    sizes=""
-                  />
-                </div>
-              </Link>
-            ))}
-        </div>
-      </div>
       <div className="w-full">
         <h2 className="text-xl md:text-3xl font-bold uppercase tracking-wide">
           Featured Products

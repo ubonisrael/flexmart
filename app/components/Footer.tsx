@@ -60,8 +60,8 @@ const Footer = () => (
               <label className="relative grow" htmlFor="search">
                 <input
                   className="w-full pl-8 py-2 rounded-l-xl"
-                  name="email"
-                  id="email"
+                  name="sub_email"
+                  id="sub_email"
                   placeholder="Enter Email Address"
                 />
                 <div
