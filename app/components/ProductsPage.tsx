@@ -193,6 +193,7 @@ const ProductsPage = ({
           {!(filterOptions.categories.length > 0) && (
             <div className="w-full flex items-center justify-center gap-4">
               <button
+              aria-label="go back 2 pages"
                 disabled={page - 2 < 1}
                 onClick={() =>
                   router.push(
@@ -207,6 +208,7 @@ const ProductsPage = ({
                 <RxDoubleArrowLeft />
               </button>
               <button
+              aria-label="go to prev page"
                 disabled={page - 1 < 1}
                 onClick={() =>
                   router.push(
@@ -224,6 +226,7 @@ const ProductsPage = ({
                 {page} / {totalPages}
               </p>
               <button
+              aria-label="go to next page"
                 disabled={page + 1 > totalPages}
                 onClick={() =>
                   router.push(
@@ -238,6 +241,7 @@ const ProductsPage = ({
                 <RxChevronRight />
               </button>
               <button
+              aria-label="go forward 2 pages"
                 disabled={page + 2 > totalPages}
                 onClick={() =>
                   router.push(

@@ -1,13 +1,13 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Prompt } from "next/font/google";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import CartContextProvider from "./context/cartContext";
 import '@radix-ui/themes/styles.css';
 import { Theme } from "@radix-ui/themes";
 
-const inter = Inter({ subsets: ["latin"] });
+const prompt = Prompt({ subsets: ["latin"],  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] });
 
 export const metadata: Metadata = {
   title: "FLEXMART",
@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={prompt.className}>
         <Theme>
         <CartContextProvider>
           <Header />

@@ -26,6 +26,7 @@ const Filter = ({
       <div className="w-full min-h-screen backdrop-blur-sm grid justify-end">
         <div ref={ref} className="w-96 h-full flex flex-col gap-2 items-start justify-between p-4 md:p-8 bg-white">
           <button
+          aria-label="close filter menu"
             className="absolute top-0 right-0 py-4 px-4 text-2xl self-end bg-transparent border-0 text-black hover:text-red-700 hover:scale-110"
             onClick={toggleFilter}
           >
@@ -43,7 +44,9 @@ const Filter = ({
                 handleChange={handleFilterOptions}
               />
               <div className="w-full flex items-center justify-around">
+                <label htmlFor="minPrice">
                 <input
+                name="minPrice"
                   className="w-20 h-8 p-2 border rounded-md"
                   type="number"
                   id="minPrice"
@@ -55,11 +58,14 @@ const Filter = ({
                     ])
                   }
                 />
+                </label>
                 <span>TO</span>
+                <label htmlFor="maxPrice">
                 <input
                   className="w-20 h-8 p-2 border rounded-md"
                   type="number"
                   id="maxPrice"
+                  name="maxPrice"
                   value={filterOptions.price_range[1]}
                   onChange={(e) =>
                     handleFilterOptions([
@@ -68,6 +74,7 @@ const Filter = ({
                     ])
                   }
                 />
+                </label>
               </div>
             </div>
             <div className="mb-6">

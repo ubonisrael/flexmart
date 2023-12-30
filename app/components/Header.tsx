@@ -115,7 +115,7 @@ const Header = () => {
           </div>
           <div className="relative text-2xl md:text-3xl p-2 rounded-lg hover:text-slate-100 hover:bg-slate-500 md:hover:bg-slate-500">
             <Link href={"/cart"}>
-              <span className="sr-only" aria-expanded="false" role="cart">
+              <span className="sr-only">
                 Cart
               </span>
               {cart.length > 0 && (
