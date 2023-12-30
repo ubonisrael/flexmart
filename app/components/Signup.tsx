@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { emailRegex, passwordRegex } from "../lib/regex";
 import ShowPassword from "../components/ShowPassword";
+import Link from "next/link";
 
 const Signup = () => {
   const [details, setDetails] = useState({"First Name": '', "Last Name": '', Email: '', Password: ''});
@@ -57,19 +58,12 @@ const Signup = () => {
       alertError("password");
       return;
     }
-
-    // const error = await signIn(email.trim(), password.trim());
-
-    // if (error) {
-    //   setError({ ...error, password: error });
-    //   return
-    // }
   };
 
   const detailsArray = Object.entries(details)
 
   return (
-    <section className="w-full max-w-sm h-[600px] flex flex-col gap-1 p-4 md:p-4 bg-slate-100 rounded-lg shadow">
+    <section className="w-full h-full sm:max-w-sm sm:my-4 lg:my-0 max-h-[576px] flex flex-col gap-1 p-4 md:p-4 bg-slate-100 rounded-lg shadow">
       <h2 className="w-full py-2 text-center capitalize font-bold text-3xl">create an account</h2>
       <div className="w-full h-[1px] bg-slate-900/20"></div>
       <form className="w-full h-full flex flex-col justify-between py-4" noValidate onSubmit={handleLogin}>
@@ -95,7 +89,7 @@ const Signup = () => {
           <button className="w-full text-center p-2 uppercase rounded-lg text-slate-50 hover:text-slate-900 bg-slate-900 hover:bg-slate-400" type="submit">
             create an account
           </button>
-          <p className="cursor-pointer hover:underline">Already have an account? Click here to login</p>
+          <Link href={`/login`} className="cursor-pointer hover:underline">Already have an account? Click here to login</Link>
         </article>
       </form>
     </section>

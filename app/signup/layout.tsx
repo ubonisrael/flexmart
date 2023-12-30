@@ -3,5 +3,5 @@ export default function SignupLayout({
   }: {
     children: React.ReactNode
   }) {
-    return <main className="w-screen h-[calc(100vh-64px)] md:h-[calc(100vh-80px)] grid place-items-center bg-slate-300">{children}</main>
+    return <main className="w-screen min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] grid place-items-center bg-slate-300">{children}</main>
   }

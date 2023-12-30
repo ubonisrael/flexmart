@@ -5,6 +5,7 @@ import { emailRegex } from "../lib/regex";
 import googleImg from '@/app/assets/btn_google_signin_dark_pressed_web.png'
 import Image from "next/image";
 import ShowPassword from "./ShowPassword";
+import Link from "next/link";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -31,7 +32,7 @@ const Login = () => {
   };
 
   return (
-    <section className="w-full max-w-sm h-[600px] flex flex-col gap-1 p-4 md:p-4 bg-slate-100 rounded-lg shadow">
+    <section className="w-full h-full sm:max-w-sm sm:h-[90%] max-h-[540px] flex flex-col p-4 md:p-4 sm: bg-slate-100 rounded-lg shadow">
       <h2 className="w-full py-2 text-center uppercase font-bold text-3xl">login</h2>
       <div className="w-full h-[1px] bg-slate-900/20"></div>
       <div className="w-48 h-14 mx-auto my-2 relative py-4">
@@ -83,7 +84,7 @@ const Login = () => {
             login
           </button>
           <p className="cursor-pointer hover:underline">Forgot Password?</p>
-          <p className="cursor-pointer hover:underline">Do not have an account? Click here to Sign Up</p>
+          <Link href={`/signup`} className="hover:underline">Do not have an account? Click here to Sign Up</Link>
         </article>
       </form>
     </section>
